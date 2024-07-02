@@ -1,0 +1,17 @@
+nav {
+    background-color: rgba($color: #203660, $alpha: 1.0);
+}
+
+a:link, a:visited {
+    color:white;
+}
+
+a:hover, a:active {
+    background-color: white;
+    text-decoration: none;
+    color: #203660;
+}
+
+i {
+    margin-right: 2px;
+}

@@ -1,0 +1,32 @@
+<div class='card'>
+    <div class='card-header h3 title'>
+        {{pageTitle}}
+    </div>
+    <div *ngIf="errorMessage" class='alert alert-danger' role='alert'>{{errorMessage}}</div>
+    <div *ngIf="infoMessage" class='alert alert-primary' role='alert'>{{infoMessage}}</div>
+    <!-- <ag-grid-angular class='ag-theme-quartz' [rowData]='rowData' [columnDefs]='columnDefs' /> -->
+    <div class='table-responsive' *ngIf="citations.length">
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>STI Type</th>
+                    <th>Title</th>
+                    <th>Distribution Date</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let citation of citations'>
+                    <td>{{citation.id}}</td>
+                    <td>{{citation.stiTypeFormatted}}</td>
+                    <td>{{citation.title}}</td>
+                    <td>{{citation.distributionDate}}</td>
+                    <td>{{citation.status}}</td>
+                    <td><a [routerLink]="['/citations', citation.id]"><button class='btn btn-primary fa fa-forward'></button></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
